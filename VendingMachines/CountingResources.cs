@@ -84,9 +84,37 @@
 
         }
 
-        public static double Change(double ChoosingSugar)
-        { 
-            
+        public static double Change(double ChoosingSugar, string OrderSelection, double cash, double enteringCoins)
+        {
+
+            double sum = 0;
+
+            if (ChoosingSugar == 1)
+            {
+                sum += enteringCoins;
+            }
+
+            if (OrderSelection == "Американо")
+            {
+                sum += 100;
+            }
+
+            if (OrderSelection == "Капучино")
+            {
+                sum += 200;
+            }
+
+            if (OrderSelection == "Латте")
+            {
+                sum += 300;
+            }
+
+            cash += sum;
+
+            enteringCoins -= sum;
+            Console.WriteLine($"Челик колучат столько монеток {enteringCoins}");
+
+            return cash;
         }
 
 
