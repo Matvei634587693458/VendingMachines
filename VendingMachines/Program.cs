@@ -1,4 +1,6 @@
 ﻿using System.Drawing;
+using VendingMachines.Coffee;
+using VendingMachines.Cola;
 
 namespace VendingMachines
 {
@@ -6,7 +8,7 @@ namespace VendingMachines
     {
         static void Main(string[] args)
         {
-            List<CoffeeReciept> reciepts = new List<CoffeeReciept>()
+            List<CoffeeReciept> cofreciepts = new List<CoffeeReciept>()
             {
                 new CoffeeReciept()
                 {
@@ -35,10 +37,35 @@ namespace VendingMachines
 
 
             };
+            List<ColaReciept> colreciepts = new List<ColaReciept>()
+            {
+                new ColaReciept()
+                {
+                    colaname = "Соса сола",
+                    cola = 3,
+                    enteringCoins = 5
+                },
+                new ColaReciept()
+                {
+                    colaname = "Спрайт",
+                    cola = 1,
+                    enteringCoins = 10
+                },
+                new ColaReciept()
+                {
+                    colaname = "Буратино",
+                    cola = 5,
+                    enteringCoins = 12
+                }
 
-            Coffeemat coffeemat = new Coffeemat(reciepts);
+
+            };
+
+            Colamat colamat = new Colamat(colreciepts);
+            colamat.PrintCola();
+
+            Coffeemat coffeemat = new Coffeemat(cofreciepts);
             coffeemat.PrintCoffee();
-
 
         }
 

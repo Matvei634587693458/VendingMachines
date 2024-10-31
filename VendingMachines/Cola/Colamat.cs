@@ -4,21 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VendingMachines
+namespace VendingMachines.Cola
 {
     class Colamat
     {
         public string machineName;
+
         public int colaAmount { get; set; }
 
-        private List<ColaReciept> _cloaReciepts { get; set; }
+        public int cashAmount { get; set; }
+
+        private List<ColaReciept> _colaReciepts { get; set; }
 
         public Colamat(List<ColaReciept> reciepts)
         {
             colaAmount = ColaOptions.maxColaCoffeeAmount;
         }
 
-        public void PrintCoffee()
+        public void PrintCola()
         {
             int count = 1;
             Console.WriteLine("Кола");
@@ -30,7 +33,7 @@ namespace VendingMachines
 
 
         }
-        public void SellCoffee(int number)
+        public void SellCola(int number, int personCash)
         {
             number--;
 
@@ -41,6 +44,8 @@ namespace VendingMachines
                 if (colaAmount >= crnt.cola)
                 {
                     colaAmount -= crnt.cola;
+
+                    personCash -= crnt.enteringCoins;
 
                     Console.WriteLine($"{crnt.colaname} готово");
                 }

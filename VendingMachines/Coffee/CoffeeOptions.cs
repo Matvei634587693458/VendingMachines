@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VendingMachines
+namespace VendingMachines.Coffee
 {
     internal class CoffeeOptions
     {
@@ -13,6 +13,8 @@ namespace VendingMachines
         public const int maxCoffeeCoffeeAmount = 80;
 
         public const int maxMilkCoffeeAmount = 90;
+
+        public const int maxCashAmount = 100;
 
         //public const int maxSugarCoffeeAmount = 100;
     }

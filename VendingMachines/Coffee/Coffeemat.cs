@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VendingMachines
+namespace VendingMachines.Coffee
 {
     internal class Coffeemat
     {
@@ -15,6 +15,8 @@ namespace VendingMachines
         public int coffeeAmount { get; set; }
 
         public int milkAmount { get; set; }
+
+        public int cashAmount { get; set; }
 
         private List<CoffeeReciept> _coffeeReciepts { get; set; }
 
