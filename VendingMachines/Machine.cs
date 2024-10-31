@@ -8,6 +8,7 @@ namespace VendingMachines
 {
     internal class Machine
     {
+        public string machineName;
         public string name;
         public double cash;
         public double water;

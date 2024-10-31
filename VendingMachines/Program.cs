@@ -6,21 +6,41 @@ namespace VendingMachines
     {
         static void Main(string[] args)
         {
-            Machine CcoffeeMachine = new Machine();
-            CcoffeeMachine.name = "Кофи машына";
-            CcoffeeMachine.cash = 1000;
-            CcoffeeMachine.water = 1000;
-            CcoffeeMachine.coffee = 1000;
-            CcoffeeMachine.milk = 1000;
-            CcoffeeMachine.sugar = 1000;
-            CcoffeeMachine.salesAmounts = 1000;
+            List<CoffeeReciept> reciepts = new List<CoffeeReciept>()
+            {
+                new CoffeeReciept()
+                {
+                    name = "Американо",
+                    water = 10,
+                    coffee = 10,
+                    milk = 0,
+                    enteringCoins = 5
+                },
+                new CoffeeReciept()
+                {
+                    name = "Капучино",
+                    water = 10,
+                    coffee = 5,
+                    milk = 5,
+                    enteringCoins = 10
+                },
+                new CoffeeReciept()
+                {
+                    name = "Латте",
+                    water = 5,
+                    coffee = 5,
+                    milk = 10,
+                    enteringCoins = 12
+                }
 
-            CountingResources.eatsPoins
-            CountingResources.eatsPoins
-            CountingResources.eatsPoins
-            CountingResources.eatsPoins
 
-    }
+            };
+
+            Coffeemat coffeemat = new Coffeemat(reciepts);
+            coffeemat.PrintCoffee();
+
+
+        }
 
     }
 }
