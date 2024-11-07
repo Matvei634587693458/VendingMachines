@@ -8,7 +8,7 @@ namespace VendingMachines.Cola
 {
     class Colamat
     {
-        public string machineName;
+        public string machineNameCOLA;
 
         public int colaAmount { get; set; }
 
@@ -16,10 +16,15 @@ namespace VendingMachines.Cola
 
         private List<ColaReciept> _colaReciepts { get; set; }
 
+        //Создает лист рецептов
+
         public Colamat(List<ColaReciept> reciepts)
         {
             colaAmount = ColaOptions.maxColaCoffeeAmount;
         }
+
+
+        //Выводит напитки
 
         public void PrintCola()
         {
@@ -33,7 +38,10 @@ namespace VendingMachines.Cola
 
 
         }
-        public void SellCola(int number, int personCash)
+
+        // Просматривает ресурсы для продажи
+
+        public void SellCola(int number)
         {
             number--;
 
@@ -45,9 +53,7 @@ namespace VendingMachines.Cola
                 {
                     colaAmount -= crnt.cola;
 
-                    personCash -= crnt.enteringCoins;
-
-                    Console.WriteLine($"{crnt.colaname} готово");
+                    Console.WriteLine($"{crnt.colaname} готова");
                 }
             }
             else

@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using VendingMachines.Coffee;
+﻿using VendingMachines.Coffee;
 using VendingMachines.Cola;
 
 namespace VendingMachines
@@ -8,6 +7,10 @@ namespace VendingMachines
     {
         static void Main(string[] args)
         {
+
+
+            //Создание рецептов
+
             List<CoffeeReciept> cofreciepts = new List<CoffeeReciept>()
             {
                 new CoffeeReciept()
@@ -61,11 +64,38 @@ namespace VendingMachines
 
             };
 
-            Colamat colamat = new Colamat(colreciepts);
-            colamat.PrintCola();
 
-            Coffeemat coffeemat = new Coffeemat(cofreciepts);
-            coffeemat.PrintCoffee();
+
+
+            Console.WriteLine("Выберите автомат cola(1)/coffee(2)");
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                Colamat colamat = new Colamat(colreciepts);
+                colamat.PrintCola();
+                int number = Convert.ToInt32(Console.ReadLine());
+                colamat.SellCola(number);
+                int PersonCash = Convert.ToInt32(Console.ReadLine());
+                BathoviClass.InputCash(cashAmount, PersonCash);
+                BathoviClass.ChangeCash(cashAmount, PersonCash);
+            }
+            if (choice == 2)
+            {
+                Coffeemat coffeemat = new Coffeemat(cofreciepts);
+                coffeemat.PrintCoffee();
+                int number = Convert.ToInt32(Console.ReadLine());
+                coffeemat.SellCoffee(number);
+                int PersonCash = Convert.ToInt32(Console.ReadLine());
+                BathoviClass.InputCash(cashAmount, PersonCash);
+                BathoviClass.ChangeCash(cashAmount, PersonCash);
+            }
+
+
+
+
+
+
 
         }
 

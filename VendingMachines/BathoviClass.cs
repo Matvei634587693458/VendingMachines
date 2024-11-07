@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VendingMachines
+﻿namespace VendingMachines
 {
     internal class BathoviClass
     {
-        public void InputCash(int cashAmount)
+
+
+
+
+        public void InputCash(int cashAmount, int PersonCash)
         {
 
-            int PersonCash = Convert.ToInt32(Console.ReadLine());
+
             if (PersonCash > cashAmount)
             {
                 Console.WriteLine($"Вот сдача {PersonCash}");
@@ -22,9 +19,24 @@ namespace VendingMachines
 
         public void ChangeCash(int cashAmount, int PersonCash)
         {
+            if (PersonCash <= cashAmount)
+            {
+                PersonCash -= cashAmount;
+                Console.WriteLine($"Вот сдача {PersonCash}");
+            }
 
-            PersonCash -= cashAmount;
-            Console.WriteLine($"Вот сдача {PersonCash}");
+        }
+
+        public void PrintMachine()
+        {
+            int count = 1;
+            Console.WriteLine("Машина");
+            foreach ( in _machin)
+            {
+                Console.WriteLine($"{count} {_machin.colaname}");
+                count++;
+            }
+
 
         }
 

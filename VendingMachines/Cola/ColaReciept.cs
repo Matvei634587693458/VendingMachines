@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace VendingMachines.Cola
 {
+
+    //Устонавливает ингридиенты для напитков
+
     internal class ColaReciept
     {
         public string colaname { get; set; }

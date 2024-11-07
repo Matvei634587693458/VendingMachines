@@ -9,7 +9,7 @@ namespace VendingMachines.Coffee
 {
     internal class Coffeemat
     {
-        public string machineName;
+        public string machineNameCOFFEE;
         public int waterAmount { get; set; }
 
         public int coffeeAmount { get; set; }
@@ -20,12 +20,17 @@ namespace VendingMachines.Coffee
 
         private List<CoffeeReciept> _coffeeReciepts { get; set; }
 
+        //Создает лист рецептов
+
+
         public Coffeemat(List<CoffeeReciept> reciepts)
         {
             waterAmount = CoffeeOptions.maxWaterCoffeeAmount;
             coffeeAmount = CoffeeOptions.maxCoffeeCoffeeAmount;
             milkAmount = CoffeeOptions.maxMilkCoffeeAmount;
         }
+
+        //Выводит напитки
 
         public void PrintCoffee()
         {
@@ -39,6 +44,9 @@ namespace VendingMachines.Coffee
 
 
         }
+
+
+        // Просматривает ресурсы для продажи
         public void SellCoffee(int number)
         {
             number--;
